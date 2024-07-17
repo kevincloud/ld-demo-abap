@@ -33,7 +33,6 @@ CLASS lcl_test IMPLEMENTATION.
     ENDMETHOD.
 
     METHOD run.
-        "CREATE object for deserialization
         DATA:
             url TYPE string value = 'https://app.launchdarkly.com/api/v2/projects/' && project_key && '/environments/' && env_key && '/flags/evaluate',
             context TYPE string value = '{"kind": "device", "key": "dvc-07deac57-fb7a-4b37-8d2a-665533e19e0c"}',
@@ -97,11 +96,6 @@ CLASS lcl_test IMPLEMENTATION.
                 EXIT.
             ENDIF.
         ENDLOOP.
-
-        "Deserialize the response
-    
-        WRITE 'This is the original code.'.
-        WRITE 'This is the new code.'.
     ENDMETHOD.
 ENDCLASS.
 
